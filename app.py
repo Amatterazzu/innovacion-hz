@@ -150,7 +150,7 @@ def registrar_venta():
         cursor.execute('INSERT INTO ventas (producto_id, cantidad, fecha) VALUES (?, ?, ?)', (producto_id, cantidad, fecha))
         cursor.execute('UPDATE productos SET stock = stock - ? WHERE id = ?', (cantidad, producto_id))
         conn.commit()
-              factura_path = generar_factura(producto_id, cantidad, fecha)
+        factura_path = generar_factura(producto_id, cantidad, fecha)
         conn.close()
         
         return send_file(
