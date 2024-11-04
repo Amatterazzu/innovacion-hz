@@ -7,12 +7,11 @@ import openpyxl
 from openpyxl.styles import Alignment, Font
 import os
 
-port = int(os.environ.get("PORT", 5000))
-app.run(host="0.0.0.0", port=port)
-
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'edu7701')
+
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
 
 DATABASE_URL = os.getenv('DATABASE_URL', 'empresa_3d.db')
 
